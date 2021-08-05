@@ -13,8 +13,18 @@ class Clock {
     }
 
     printTime() {
+        if (this.seconds === 60) {
+            this.minutes++;
+            this.seconds = 0;
+        }
+        if (this.minutes === 60) {
+            this.hours++;
+            this.minutes == 0;
+        }
+        if (this.hours === 24) {
+            this.hours = 0;
+        }
         console.log( `${this.hours}:${this.minutes}:${this.seconds}`);
-
     }
 
     _tick() {
